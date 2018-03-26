@@ -162,7 +162,6 @@ public class MultipleCreditorAction extends BaseAction {
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
-
 	}
 
 	@Action("download")
@@ -170,11 +169,9 @@ public class MultipleCreditorAction extends BaseAction {
 		// 1.获取输入流读取模版文件
 		FileInputStream fis = null;
 		try {
-			String path = this.getRequest().getSession().getServletContext()
-					.getRealPath("/WEB-INF/excelTemplate/ClaimsBatchImportTemplate.xlsx");
+			String path = this.getRequest().getSession().getServletContext().getRealPath("/WEB-INF/excelTemplate/ClaimsBatchImportTemplate.xlsx");
 			fis = new FileInputStream(path);
-			String mimetype = this.getRequest().getSession().getServletContext()
-					.getMimeType("ClaimsBatchImportTemplate.xlsx");
+			String mimetype = this.getRequest().getSession().getServletContext().getMimeType("ClaimsBatchImportTemplate.xlsx");
 			int index = (path.lastIndexOf("."));
 			String filename = DateUtil.getDateStr(new Date(), "yyyyMMddHHmmss") + path.substring(index);
 
@@ -189,6 +186,5 @@ public class MultipleCreditorAction extends BaseAction {
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
-
 	}
 }

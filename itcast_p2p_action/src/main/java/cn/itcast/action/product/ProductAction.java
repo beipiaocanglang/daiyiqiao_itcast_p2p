@@ -99,9 +99,7 @@ public class ProductAction extends BaseAction implements ModelDriven<Product> {
 
 	/**
 	 * 方法描述：将状态转换为中文
-	 * 
-	 * @param products
-	 *            void
+	 * @param p
 	 */
 	private void changeStatusToChinese(Product p) {
 		List<Product> ps = new ArrayList<Product>();
@@ -185,7 +183,6 @@ public class ProductAction extends BaseAction implements ModelDriven<Product> {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-
 	}
 
 	@Action("findAllProduct")
@@ -227,8 +224,6 @@ public class ProductAction extends BaseAction implements ModelDriven<Product> {
 			}
 			return;
 		}
-
 		// Response它是我们自己定义的一个类,这个类中有属性status,Data,最后我们是将Response对象转换成json
-
 	}
 }

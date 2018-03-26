@@ -30,7 +30,5 @@ public class MatchAction extends BaseAction{
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
-		
-	
 	}
 }

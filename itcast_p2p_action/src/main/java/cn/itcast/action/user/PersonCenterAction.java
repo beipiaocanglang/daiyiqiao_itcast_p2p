@@ -107,6 +107,5 @@ public class PersonCenterAction extends BaseAction {
 			}
 			return;
 		}
-
 	}
 }

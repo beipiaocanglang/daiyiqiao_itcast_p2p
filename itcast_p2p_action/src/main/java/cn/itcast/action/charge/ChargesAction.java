@@ -99,13 +99,10 @@ public class ChargesAction extends BaseAction {
 			int status=Integer.parseInt(this.getRequest().getParameter("status"));
 			String startDate=this.getRequest().getParameter("startDate");
 			String endDate=this.getRequest().getParameter("endDate");
-			
-			
+
 			// 3.调用service获取一个Page
 			int uid=(int) hmap.get("id");
-		
-			
-			
+
 			Page<ProductAccount> page = productAccountService.findProductAccountByPage(currentPage, 2,uid,status,startDate,endDate);
 			// 4.响应数据到浏览器
 
@@ -135,8 +132,7 @@ public class ChargesAction extends BaseAction {
 		String pMonthlyExtractInterest = this.getRequest().getParameter("pMonthlyExtractInterest"); // 每月提取利息
 
 		// 总本息
-		String endInvestTotalMoney = BigDecimalUtil.endInvestTotalMoney(pAmount, pDeadline, pExpectedAnnualIncome,
-				pMonthlyExtractInterest);
+		String endInvestTotalMoney = BigDecimalUtil.endInvestTotalMoney(pAmount, pDeadline, pExpectedAnnualIncome, pMonthlyExtractInterest);
 
 		// 本次待收利息 =总本息-投资金额
 		BigDecimal mayInterrestIncome = BigDecimalUtil.sub(endInvestTotalMoney, pAmount);
@@ -305,6 +301,5 @@ public class ChargesAction extends BaseAction {
 
 		// 3.调用service完成充值操作
 		boolean flag = chargeService.charge(money, bankCardNum, userid);
-
 	}
 }

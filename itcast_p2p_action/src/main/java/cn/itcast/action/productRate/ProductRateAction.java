@@ -51,6 +51,5 @@ public class ProductRateAction extends BaseAction {
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
-
 	}
 }

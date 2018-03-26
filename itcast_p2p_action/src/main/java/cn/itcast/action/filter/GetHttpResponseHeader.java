@@ -13,8 +13,6 @@ import cn.itcast.cache.BaseCacheService;
 import cn.itcast.utils.ConfigurableConstants;
 import cn.itcast.utils.SpringContext;
 
-
-
 public class GetHttpResponseHeader {
 	private static BaseCacheService baseCacheService = (BaseCacheService) SpringContext.getInstance().getBean("redisCache");
 	private static RedisTemplate<String, Object> redisTemplate;
@@ -40,5 +38,4 @@ public class GetHttpResponseHeader {
 		}
 		return token;
 	}
-
 }

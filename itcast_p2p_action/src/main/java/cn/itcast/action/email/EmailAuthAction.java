@@ -73,8 +73,7 @@ public class EmailAuthAction extends BaseAction {
 		Map<String, Object> hmap = baseCacheService.getHmap(token);
 		try {
 			if (hmap == null || hmap.size() == 0) {
-				this.getResponse().getWriter()
-						.write(Response.build().setStatus(FrontStatusConstants.NOT_LOGGED_IN).toJSON());
+				this.getResponse().getWriter().write(Response.build().setStatus(FrontStatusConstants.NOT_LOGGED_IN).toJSON());
 				return;
 			}
 
@@ -107,6 +106,5 @@ public class EmailAuthAction extends BaseAction {
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
-
 	}
 }

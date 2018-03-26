@@ -42,7 +42,5 @@ public class AccountLogAction extends BaseAction {
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
-
 	}
-
 }

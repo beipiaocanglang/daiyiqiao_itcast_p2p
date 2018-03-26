@@ -31,14 +31,12 @@ public class VerificationAction extends BaseAction {
 		String token = GetHttpResponseHeader.getHeadersInfo(this.getRequest());
 		try {
 			if (StringUtils.isEmpty(token)) {
-				this.getResponse().getWriter()
-						.write(Response.build().setStatus(FrontStatusConstants.NULL_TOKEN).toJSON());
+				this.getResponse().getWriter().write(Response.build().setStatus(FrontStatusConstants.NULL_TOKEN).toJSON());
 				return;
 			}
 			Map<String, Object> hmap = baseCacheService.getHmap(token);
 			if (hmap == null || hmap.size() == 0) {
-				this.getResponse().getWriter()
-						.write(Response.build().setStatus(FrontStatusConstants.NOT_LOGGED_IN).toJSON());
+				this.getResponse().getWriter().write(Response.build().setStatus(FrontStatusConstants.NOT_LOGGED_IN).toJSON());
 				return;
 			}
 
@@ -49,8 +47,7 @@ public class VerificationAction extends BaseAction {
 			// 3.从redis中获取验证码，判断
 			String _code = baseCacheService.get(phone);
 			if (!code.equals(_code)) {
-				this.getResponse().getWriter()
-						.write(Response.build().setStatus(FrontStatusConstants.INPUT_ERROR_OF_VALIDATE_CARD).toJSON());
+				this.getResponse().getWriter().write(Response.build().setStatus(FrontStatusConstants.INPUT_ERROR_OF_VALIDATE_CARD).toJSON());
 				return;
 			}
 

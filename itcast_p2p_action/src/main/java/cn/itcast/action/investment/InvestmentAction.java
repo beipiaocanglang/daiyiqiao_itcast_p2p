@@ -57,6 +57,5 @@ public class InvestmentAction extends BaseAction {
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
-
 	}
 }

@@ -283,7 +283,6 @@ public class UserAction extends BaseAction implements ModelDriven<UserModel> {
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
-
 	}
 
 	// 注册操作
@@ -355,7 +354,6 @@ public class UserAction extends BaseAction implements ModelDriven<UserModel> {
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
-
 	}
 
 	// 验证手机号是否可用
@@ -444,8 +442,6 @@ public class UserAction extends BaseAction implements ModelDriven<UserModel> {
 			} catch (IOException e) {
 				e.printStackTrace();
 			}
-
 		}
-
 	}
 }
